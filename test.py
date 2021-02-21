@@ -1,9 +1,15 @@
-import csv
-import numpy as np
 import pandas as pd
+import datetime
+import csv
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 
-pd.read_csv("data\crypto-markets.csv")
+# Here is all the data in a chart
 
-# crypt.head()
+df = pd.read_csv("netflix_titles.csv")
+df.dataframeName = 'netflix_titles.csv'
+nRow, nCol = df.shape
 
+runtime = pd.read_csv("netflix_titles.csv", usecols=['duration'])
 
+print(runtime)
