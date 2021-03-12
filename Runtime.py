@@ -20,7 +20,8 @@ movies['duration'] = movies['duration'].apply('{:0>7}'.format)
 runtime = movies['duration'].apply('{:0>3}'.format).str.extract('(^\d*)')
 runtime.to_csv('runtime.csv')
 # print("Total Time of all movies: ", total_time, " minutes")
-
+with pd.option_context('display.max_rows', None, 'display.max_columns', None):
+    print(movies['duration'].value_counts().sort_index(axis=0, ascending=True))
 movies['duration'].value_counts().sort_index(axis=0, ascending=True).plot(kind='line', figsize=(10, 10))
 plt.xlabel("Runtime", labelpad=14)
 plt.ylabel("Count", labelpad=14)

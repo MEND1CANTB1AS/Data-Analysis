@@ -16,7 +16,7 @@ print(f'There are {nRow} rows and {nCol} columns')
 media = df['type'].value_counts()
 media_list = media.tolist()
 print(media_list)
-
+print(df['rating'].value_counts())
 df['rating'].value_counts().plot(kind='bar')
 plt.xlabel("Rating", labelpad=14)
 plt.ylabel("Count", labelpad=14)
